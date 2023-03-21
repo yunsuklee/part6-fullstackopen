@@ -13,24 +13,21 @@ const Anecdote = ({ anecdote, handleClick }) => (
   </li>
 )
 
-const Anecdotes = () => {
+const AnecdoteList = () => {
   const dispatch = useDispatch()
   const anecdotes = useSelector(state => state)
 
   return (
-    <div>
-      <h2>Anecdotes</h2>
-      <ul>
-        {anecdotes.map(anecdote =>
-          <Anecdote 
-            key={anecdote.id}
-            anecdote={anecdote}
-            handleClick={() => dispatch(vote(anecdote.id))}
-          />
-        )}
-      </ul>
-    </div>
+    <ul>
+      {anecdotes.map(anecdote =>
+        <Anecdote 
+          key={anecdote.id}
+          anecdote={anecdote}
+          handleClick={() => dispatch(vote(anecdote.id))}
+        />
+      )}
+    </ul>
   )
 }
 
-export default Anecdotes
+export default AnecdoteList

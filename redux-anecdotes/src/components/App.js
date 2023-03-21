@@ -1,10 +1,11 @@
-import Anecdotes from './Anecdotes'
-import NewAnecdote from './NewAnecdote'
+import AnecdoteList from './AnecdoteList'
+import AnecdoteForm from './AnecdoteForm'
 
 const App = () => (
   <div>
-    <Anecdotes />
-    <NewAnecdote />
+    <h2>AnecdotesList</h2>
+    <AnecdoteList />
+    <AnecdoteForm />
   </div>
 )
 
