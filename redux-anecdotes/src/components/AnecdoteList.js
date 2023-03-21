@@ -15,7 +15,13 @@ const Anecdote = ({ anecdote, handleClick }) => (
 
 const AnecdoteList = () => {
   const dispatch = useDispatch()
-  const anecdotes = useSelector(state => state)
+  const anecdotes = useSelector(({ filter, anecdotes }) => {
+    if (filter === '') return anecdotes
+
+    const regex = new RegExp(filter, 'gi')
+
+    return anecdotes.filter(a => a.content.match(regex))
+  })
 
   return (
     <ul>
