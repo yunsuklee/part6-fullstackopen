@@ -24,7 +24,7 @@ const AnecdoteList = () => {
     return anecdotes.filter(a => a.content.match(regex))
   })
   const handleVote = (anecdote) => {
-    dispatch(voteAnecdote(anecdote.id))
+    dispatch(voteAnecdote(anecdote))
     dispatch(setMessage(`You voted '${anecdote.content}'`))
     setTimeout(() => {
       dispatch(setMessage(''))
